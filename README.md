@@ -7,7 +7,7 @@ This is my project 3. Developing my first web app.
 ### Diagram
 Using MindNode to draw the diagram of data base.
 
-![](Documents/proyectos_wedapp/wedapp/project3/MindMapDiagram_dataBase.png)
+![](https://github.com/wedapps/webapp/blob/master/MindMapDiagram_dataBase.png "Data Base")
 
 ## Don't forget
 > * Mi trabajo no es caer bien a la gente. Mi trabajo es hacerles mejores.* Steve Jobs
