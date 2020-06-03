@@ -4,6 +4,7 @@ var bcrypt = require('bcrypt-nodejs');
 var User = require('../models/user');
 var jwt = require('../services/jwt');
 
+// Métodos de Pruebas
 function home (req, res) {
     res.status(200).send({
         message: 'Hola Mundo, desde el servidor de NodeJS'
@@ -17,6 +18,7 @@ function pruebas (req, res) {
     });
 }
 
+// Registro
 function saveUser(req, res) {
     var params = req.body;
     var user = new User();
@@ -88,12 +90,22 @@ function loginUser(req, res) {
             return res.status(404). send({message: '¡Usuario no registrado! Revise email ingresado e intente nuevamente o regístrese'});
         }
     });
+}
 
+// Método para devolver datos de usuarios
+function getUser(req, res) {
+    var userId = req.params.id;
+    User.findById(userId, (err, user) => {
+        if(err) return res.status(500).send({message: 'Error en la petición de usuario'});
+        if(!user) return res.status(404).send({message: 'Usuario no existe'});
+        return res.status(200).send({user});
+    });
 }
 
 module.exports = {
     home,
     pruebas,
     saveUser,
-    loginUser
+    loginUser,
+    getUser
 }
